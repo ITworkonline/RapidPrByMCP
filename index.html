@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Code Editor Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Frontend Code Editor Agent</h1>
+        <div class="description">
+            <p>Enter your request to edit the frontend code. The agent will analyze your request, modify the code, and submit a PR to GitHub.</p>
+            <p>Example: "Make the header background blue" or "Increase the font size of all paragraphs"</p>
+        </div>
+        <div class="request-form">
+            <form id="edit-request-form">
+                <div class="form-group">
+                    <label for="request-input">Your Request:</label>
+                    <textarea id="request-input" placeholder="Enter your frontend editing request here..." rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="repo-url">GitHub Repository URL:</label>
+                    <input type="text" id="repo-url" placeholder="https://github.com/username/repo">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit-btn">Process Request</button>
+                </div>
+            </form>
+        </div>
+        <div class="status" id="status-container">
+            <h2>Status:</h2>
+            <div id="status-output">Ready to process your request...</div>
+        </div>
+        <div class="results" id="results-container" style="display: none;">
+            <h2>Analysis Results:</h2>
+            <div id="analysis-output"></div>
+            <h3>Code Changes:</h3>
+            <pre id="code-diff"></pre>
+            <h3>PR Details:</h3>
+            <div id="pr-details"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
